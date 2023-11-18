@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多分支判断年龄</title>
+
+
+    <style>
+        .box {
+            width: 400px;
+            height: 80px;
+            margin: 10px auto;
+            border: 1px solid blue;
+            border-radius: 10px;
+            padding-left: 15px;
+            text-align: center;
+
+
+        }
+
+        input {
+
+            margin-top: 10px;
+        }
+
+        #btn {
+
+            margin-bottom: 10px;
+        }
+
+        #result {
+
+            color: red;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="box">
+        <span>请输入您的年龄：</span>
+        <input type="text" id="txtAge" value="" />
+        <input type="button" id="btn" value="确认" onclick="judgeAge()">
+        <br />
+        <span id="result"></span>
+    </div>
+
+
+    <script>
+
+        function judgeAge() {
+
+            var age = parseInt(document.getElementById("txtAge").value)
+
+            var result;
+            if (age >= 60 && age <= 150) {
+
+                result = "老年人"
+
+            } else if (age >= 40 && age < 60) {
+
+                result = "中年人"
+
+            } else if (age >= 18 && age < 40) {
+
+                result = "青年人"
+            } else if (age >= 0 && age < 18) {
+
+                result = "未成年"
+
+            } else {
+                result = "输入有误"
+            }
+
+
+            document.getElementById("result").innerHTML = result
+
+
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

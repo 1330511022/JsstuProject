@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            font: 14px/20px;
+            background: #DFF1E6;
+        }
+
+        .box {
+            margin: 100px auto;
+            width: 380px;
+            border: 1px solid #e41515;
+            border-radius: 12px;
+            box-shadow: 0 0 5px #e41515;
+
+        }
+
+        .btn {
+            width: 80px;
+            height: 30px;
+            border-radius: 10%;
+            box-shadow: 0 0 5px #e41515;
+            font-size: 20px;
+            margin-left: 125px;
+
+        }
+
+        td {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        table:nth-of-type(1) {
+            margin-top: 15px;
+            margin-left: 8px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table>
+            <tr>
+                <td>数学成绩</td>
+                <td><input type="text" id="math"></td>
+                <td><span id="mathResult"></span></td>
+            </tr>
+            <tr>
+                <td>化学成绩</td>
+                <td><input type="text" id="chem"></td>
+                <td><span id="chemResult"></span></td>
+            </tr>
+            <tr>
+                <td>物理成绩</td>
+                <td><input type="text" id="phy"></td>
+                <td><span id="phyResult"></span></td>
+            </tr>
+            <tr>
+                <td colspan="3"><input type="button" value="判断" onclick="judge()" class="btn"></td>
+            </tr>
+
+        </table>
+
+
+    </div>
+
+    <script>
+        function judge() {
+            var sx = document.getElementById("math").value
+            var hx = document.getElementById("chem").value
+            var wl = document.getElementById("phy").value
+
+            var sxr = document.getElementById("mathResult")
+            var hxr = document.getElementById("chemResult")
+            var wlr = document.getElementById("phyResult")
+
+            var fail = "<font color='red'>不合格</font>"
+            var pass = "<font color='green'>合格</font>"
+            var error = "<font color='red'>输入有误</font>"
+
+            if (sx < 60 && sx >= 0) {
+                sxr.innerHTML = fail
+            } else if (sx >= 60 && sx < 100) {
+                sxr.innerHTML = pass
+            } else {
+                sxr.innerHTML = error
+            }
+
+            if (hx < 60 && hx >= 0) {
+                hxr.innerHTML = fail
+            } else if (hx >= 60 && hx < 100) {
+                hxr.innerHTML = pass
+            } else {
+                hxr.innerHTML = error
+            }
+
+            if (wl < 60 && wl >= 0) {
+                wlr.innerHTML = fail
+            } else if (wl >= 60 && wl < 100) {
+                wlr.innerHTML = pass
+            } else {
+                wlr.innerHTML = error
+            }
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
