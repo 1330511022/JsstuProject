@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var pr = Number(prompt("请输入商品单价"))
+        var num = Number(prompt("请输入商品数量"))
+        var money = Number(prompt("请输入收款金额"))
+
+        document.write("应收" + (pr * num) + "元<br/>")
+        document.write("实际收款" + money + "元<br/>")
+        document.write("找零" + (money - (pr * num)) + "元")
+
+
+    </script>
+
+
+</body>
+
+</html>

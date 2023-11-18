@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 关于引用Javasreipt的三种方式 -->
+
+<body>
+    <!-- 行内式 -->
+    <button onclick="alert('单击事件')">点击</button>
+    <hr />
+    <!-- 内嵌式 -->
+    <input type="text" id="in_01" onchange="input()" />
+    <script>
+        function input() {
+            var text = document.getElementById("in_01").value
+            alert(text)
+        }
+    </script>
+    <!-- 外链式 -->
+    <script src="../js/test.js"></script>
+    密码:<input type="text" id="password"> <br />
+    确认密码:<input type="text" id="checkpassword" onblur="checkpassword()">
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            font: 14px/20px;
+            background: #DFF1E6;
+        }
+
+        .box {
+            margin: 100px auto;
+            width: 380px;
+            border: 1px solid #00e1ff;
+            border-radius: 12px;
+            box-shadow: 0 0 5px #1587e4;
+
+        }
+
+        .btn {
+            width: 80px;
+            height: 30px;
+            border-radius: 10%;
+            box-shadow: 0 0 5px #7c8ce6;
+            font-size: 20px;
+            margin-left: 125px;
+
+        }
+
+        td {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        table:nth-of-type(1) {
+            margin-top: 15px;
+            margin-left: 8px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <span> 请输入工龄</span>
+        <input type="text" id="workage"><br />
+        <span>请输入月薪</span>
+        <input type="text" id="salary"><br />
+        <input type="button" onclick="compute()" value="计算"><br />
+        <span id="result"></span>
+    </div>
+    <script>
+        function compute() {
+            var wa = document.getElementById("workage").value
+            var sy = document.getElementById("salary").value
+
+            var rs = document.getElementById("result")
+            if (wa < 2 && sy > 12000) {
+                rs.innerHTML = sy * 1.2
+            } else if (wa < 2 && sy < 12000) {
+                rs.innerHTML = sy
+            } else if (wa > 2 && sy > 15000) {
+                rs.innerHTML = sy * 1.8
+            } else if (wa > 2 && sy < 15000) {
+                rs.innerHTML = sy * 1.5
+            } else if (wa > 5 && sy > 20000) {
+                rs.innerHTML = sy * 3
+            } else if (wa > 5 && sy < 20000) {
+                rs.innerHTML = sy * 2
+            }
+
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
