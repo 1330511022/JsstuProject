@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+        }
+        select {
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="box">
+        <select id="TianQi" onclick="changeImage()">
+            <option value="春">春</option>
+            <option value="夏">夏</option>
+            <option value="秋">秋</option>
+            <option value="冬">冬</option>
+        </select>
+    </div>
+    <img src="../img/spring.png" id="img_01">
+    <script>
+        function changeImage() {
+            var lg = document.getElementById("TianQi").value
+            var img = document.getElementById("img_01")
+            switch (lg) {
+                case "春":
+                    img = document.getElementById("img_01")
+                    img.src = "../img/spring.png"
+                    break;
+                case "夏":
+                    img = document.getElementById("img_01")
+                    img.src = "../img/summer.png"
+                    break;
+                case "秋":
+                    img = document.getElementById("img_01")
+                    img.src = "../img/autumn.png"
+                    break;
+                case "冬":
+                    img = document.getElementById("img_01")
+                    img.src = "../img/winter.png"
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
