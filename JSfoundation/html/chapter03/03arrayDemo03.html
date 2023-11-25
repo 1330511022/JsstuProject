@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>请输入英文字符串</span>
+    <input type="text" name="" id="txt" placeholder="请输入英文字符串">
+    <button onclick="check()">检测是否是回文数</button>
+    <br>
+    <span id="result"></span>
+
+    <script>
+        function check() {
+            var str = document.getElementById("txt").value
+            var arr = str.split("")
+            arr = arr.reverse()
+            var newStr = arr.join("")
+            var result = "";
+            if (newStr == str) {
+                result = str + "是回文字符串";
+
+            } else {
+                result = str + "不是回文字符串";
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
