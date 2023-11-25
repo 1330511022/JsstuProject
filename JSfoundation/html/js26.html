@@ -5,22 +5,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .box {
+
+            width: 520px;
+            margin: 10px auto;
+
+        }
+
+
+        td {
+
+            padding: 5px;
+
+        }
+    </style>
+
 </head>
 
 <body>
+
+
+
     <script>
-        var sum = ;
-        for (var i = 1; ; i++) {
-            var factorial = ;
-            for (var n = 1; ;) {
-                factorial = ;
+
+        // var  sum=0
+
+        // for(var  i=1;i<=50;i++){
+
+        //          var  factorial=1;
+
+        //            for( var n=1;n<=i;n++){
+        //                 factorial=factorial*n;
+        //            }
+        //            sum=sum+factorial;
+
+
+        // }
+
+        // document.write("1!+2！+3！+...+50!="+sum)
+
+
+
+        var rows = 10;
+        var cols = 10;
+
+        var str = "<div class='box'><table>"
+        var picNumber = 1;
+
+
+        for (var row = 1; row <= rows; row++) {
+
+            str += "<tr>"
+
+
+            for (var col = 1; col <= cols; col++) {
+
+
+
+                str += "<td><img src='images/" + picNumber + ".bmp' /><td>"
+
+                picNumber++;
+
             }
-            sum =
+
+            str += "</tr>";
+
+
 
         }
-        document.write("1!+2!+3!+...+50!=" + sum)
-//nihao1
+
+
+        str += "</table></div>"
+
+
+        document.write(str)
+
+
+
+        //  使用表格的形式 将 9*9  乘法表 在页面中输出出来
+
+
+
     </script>
+
+
 
 
 </body>
