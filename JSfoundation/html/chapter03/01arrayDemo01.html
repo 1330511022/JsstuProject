@@ -6,34 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-
     <style>
         .box {
 
-            width: 800px;
             margin: 10px auto;
-
+            width: 1000px;
         }
 
         table {
 
+            width: 100%;
             text-align: center;
         }
 
-        .img {
-
-            height: 170px;
-        }
-
-        .text {
-
-            height: 30px;
-        }
-
         td {
-            border-bottom: 1px solid #CCCCCC;
-            padding: 5px;
 
+            text-align: center;
         }
     </style>
 
@@ -41,45 +29,60 @@
 
 <body>
 
-    <div class="box" id="mytable">
-
-
-    </div>
+    <div class="box" id="pic"></div>
 
     <script>
 
-        var imgUrls = ['C++', 'html5', 'jquery', 'jsp', 'kotlin', 'mysql', 'perl', 'php', 'python', 'qt'];
-        var imgText = ['C++编程语言', '优秀的前端工具', '前端框架', '运行在服务端的语言', 'Android 世界的Swift', '关系型数据库管理系统', '实用报表提取语言', '服务器端脚本语言', 'AI开发利器', 'C++图形用户界面应用程序开发框架'];
+        // var imgs=[];
 
-        var str = "<table><tr>"; i = 0;
+        // imgs["春"]="spring.png"
+        // imgs["夏"]="summer.png"
+        // imgs["秋"]="autumn.png"
+        // imgs["冬"]="winter.png"
 
-        for (var k in imgUrls) {
+        // var str="<table><tr>"
 
-            str += "<td class='img'> <img src='../imgs/img2/" + imgUrls[k] + ".jpg'></td>";
+        //     for(var k in imgs){
+        //         str+="<td>"+k+"</td>"
 
-            if ((parseInt(k) + 1) == 5 || (parseInt(k) + 1) == 10) {
+        //     }
 
-                str += "</tr><tr>"
+        //     str+="</tr><tr>"
 
-                for (; i <= k; i++) {
+        //     for(var k in imgs){
 
-                    str += "<td class='text'>" + imgText[i] + "</td>"
-                }
-                str += "</tr><tr>"
-            }
+        //         str+="<td><img src='images/"+imgs[k]+"'></td>"
+        //     }
+
+        //     str+="</tr></table>"
+
+        //     document.getElementById("pic").innerHTML=str
+
+
+        var imgs = [{ name: "春", value: "spring.png" }, { name: "夏", value: "summer.png" }, { name: "秋", value: "autumn.png" }, { name: "冬", value: "winter.png" }]
+
+        var str = "<table><tr>"
+
+        for (img of imgs) {
+
+            str += "<td>" + img.name + "</td>"
 
         }
 
-        str += "</tr></table>";
+        str += "</tr><tr>"
+        for (img of imgs) {
 
-        // document.write(str);
+            str += "<td><img src='/JSfoundation/imgs/img/" + img.value + "'></td>"
 
-        document.getElementById("mytable").innerHTML = str;
+        }
+        str += "</tr></table>"
+
+        document.getElementById("pic").innerHTML = str
+
 
 
 
     </script>
-
 
 
 </body>

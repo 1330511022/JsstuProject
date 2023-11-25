@@ -8,12 +8,91 @@
 </head>
 
 <body>
-    <!-- 关联数组 -->
+
+    <!-- 
+
+               关联数组 
+
+               改变 数组的下标名称 实现 数组 内部的结果 形成一个对象 信息
+
+
+
+               
+
+
+         -->
+
+
     <script>
-        
+
+        //  关联数组 
+
+        // 改变 数组的下标名称 实现 数组 内部的结果 形成一个对象 信息
+
+        // 第一种 方式  字面量的初始化
+
+        var student = [];
+
+        student['name'] = "王老师";
+
+        student['age'] = 18;
+        student['gender'] = 'male';
+
+
+        //  for(index in student){
+
+        //     console.log(student[index]);
+        //  }
+
+        console.log(student['name']);
+
+        console.log(student.name);
+
+
+        //    第二种方式  new 关键字 
+
+        var teacher = new Array();
+        teacher['name'] = "张老师"
+
+        teacher['age'] = 22;
+        teacher['gender'] = 'female';
+
+        console.log(teacher.name);
+
+
+        //  第三种方式  
+
+        var employee = { id: 1, name: "张三", gender: "male" }
+
+        //  for(index in employee){
+
+        // console.log(employee[index]);
+        //  }
+
+
+        console.log(employee.id);
+        console.log(employee.name);
+        console.log(employee.gender);
+
+
+        var employees = [{ id: 1, name: "张三", gender: "male" }, { id: 2, name: "张三1", gender: "male" }, { id: 3, name: "张三2", gender: "male" }, { id: 4, name: "张三3", gender: "male" }]
+
+
+        for (emp of employees) {
+
+            console.log(emp.id);
+            console.log(emp.name);
+            console.log(emp.gender);
+
+        }
+
+
+
+
+
+
 
     </script>
-
 
 
 </body>
