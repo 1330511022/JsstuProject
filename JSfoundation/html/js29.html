@@ -5,22 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+
+    <style>
+        .box {
+
+            width: 800px;
+            margin: 10px auto;
+
+        }
+
+        table {
+
+            text-align: center;
+        }
+
+        .img {
+
+            height: 170px;
+        }
+
+        .text {
+
+            height: 30px;
+        }
+
+        td {
+            border-bottom: 1px solid #CCCCCC;
+            padding: 5px;
+
+        }
+    </style>
+
 </head>
 
 <body>
-    <div class="box" id="mytable"></div>
+
+    <div class="box" id="mytable">
+
+
+    </div>
 
     <script>
-        var imgUrls = ['C++', 'html5', 'jquery', 'jsp', 'kotlin', 'mysql', 'perl', 'php', 'python', 'qt']
-        var imgText = ['C++编程语言', '优秀的前端工具', '前端框架',
-            '运行在服务器端的语言', 'Android世界的swift', '关系数据库管理系统', '实用报表提交语言', '服务器端脚本语言',
-            'AI开发利器', 'C++图形用户界面应用程序开发框架'];
-        var str = "<table><tr>", i = 0;
-            for(){
 
+        var imgUrls = ['C++', 'html5', 'jquery', 'jsp', 'kotlin', 'mysql', 'perl', 'php', 'python', 'qt'];
+        var imgText = ['C++编程语言', '优秀的前端工具', '前端框架', '运行在服务端的语言', 'Android 世界的Swift', '关系型数据库管理系统', '实用报表提取语言', '服务器端脚本语言', 'AI开发利器', 'C++图形用户界面应用程序开发框架'];
+
+        var str = "<table><tr>"; i = 0;
+
+        for (var k in imgUrls) {
+
+            str += "<td class='img'> <img src='../imgs/img2/" + imgUrls[k] + ".jpg'></td>";
+
+            if ((parseInt(k) + 1) == 5 || (parseInt(k) + 1) == 10) {
+
+                str += "</tr><tr>"
+
+                for (; i <= k; i++) {
+
+                    str += "<td class='text'>" + imgText[i] + "</td>"
+                }
+                str += "</tr><tr>"
             }
 
+        }
+
+        str += "</tr></table>";
+
+        // document.write(str);
+
+        document.getElementById("mytable").innerHTML = str;
+
+
+
     </script>
+
 
 
 </body>
