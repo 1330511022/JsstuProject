@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        //  循环控制语句    
+        //  while
+
+        //  do- while()
+
+        //  for 循环
+
+
+        // while(条件表达式){
+
+        //     循环体
+
+        // }
+
+
+        // while(true){
+
+        //    console.log("大家好")
+
+        // }
+
+        //                在页面中 输出 100条  我是1级标题啊
+
+        var index = 1;
+
+        while (index <= 100) {
+
+
+            document.write("<h1>我是一级标题" + index + "</h1>");
+
+            index++;
+        }
+
+
+        //  在页面中 输出 2-500之间的 偶数
+
+        var number = 2;
+
+        while (number <= 500) {
+
+            if (number % 2 == 0) {
+
+
+                document.write(number + "是偶数" + "，")
+
+            }
+
+
+            number++;
+        }
+
+
+        //  水仙花数 
+
+        //   输出100-1000  之间找出 水仙花数
+        var num = 100;
+        while (num <= 1000) {
+            var temp = num;
+            var sum = 0;
+            while (temp > 0) {
+                var digit = temp % 10;
+                sum += digit ** 3;
+                temp = Math.floor(temp / 10);
+            }
+            if (num === sum) {
+                document.write("<br/>"+num+"<br/>")
+            }
+            num++;
+        }
+
+        /**
+         * 
+         * 
+         * **/
+
+    </script>
+
+
+</body>
+
+</html>
