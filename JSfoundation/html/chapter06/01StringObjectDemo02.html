@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box" id="dv_01"></div>
+    <script>
+        //String对象的常用函数
+        var str = "hello,world!";
+        ch1 = str.charAt(6)//返回指定索引位置处的字符
+        console.log(ch1);
+
+        ch2 = str.charCodeAt(0)//返回指定字符的 Unicode 编码
+        console.log(ch2);
+
+        ch3 = str.fontcolor("red")//把带有 COLOR 属性的一个 HTML <FONT> 标记放置在 String 对象中的文本两端。
+        document.getElementById("dv_01").innerHTML = ch3
+
+        console.log(str.indexOf('o'));//返回 String 对象内第一次出现子字符串的字符位置。 
+
+        var s = "hellodoghellocatJSJSJSJSJS";
+        var newst = s.replace("dog", "cat");//返回根据正则表达式进行文字替换后的字符串的复制
+        console.log(newst);
+
+        function SubstrDemo() {//返回一个从指定位置开始的指定长度的子字符串。
+            var s, ss;
+            var s = "The quick brown fox jumped over the lazy yellow dog.";
+            ss = s.substr(16, 3);
+            // Returns "fox".
+            return (ss);
+        }
+        var Sub = SubstrDemo();
+        console.log(Sub);
+
+        var strVariable = "This is a STRING object"; //返回一个字符串，该字符串中的字母被转换为小写字母。
+        strVariable = strVariable.toLowerCase();
+
+        console.log(strVariable);
+
+
+
+
+    </script>
+</body>
+
+</html>
