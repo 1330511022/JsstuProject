@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [34, 53, 23, 67, 95, 34, 20, 43, 23, 78, 91];
+        (function (arr) {
+            var max = arr[0];
+            var min = arr[1];
+            for (let index = 0; index < arr.length; index++) {
+                if (arr[index] > max) {
+                    max = arr[index];
+                } else if (arr[index] < min) {
+                    min = arr[index];
+                }
+            }
+            console.log(max);
+            console.log(min);
+        })(arr)
+    </script>
+
+</body>
+
+</html>
