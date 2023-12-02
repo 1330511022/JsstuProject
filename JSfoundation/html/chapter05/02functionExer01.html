@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var s = [23, 34, 40, 45, 28, 36, 49, 42, 33, 38];
+
+        function min(a, b) {
+            if (a < b) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function max(a, b) {
+            if (a < b) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function getMaxMinAge(arr, func) {
+            var m = arr[0];
+            for (var n in arr) {
+                if (func(arr[n], m)) {
+                    m = arr[n];
+                }
+            }
+            return m;
+        }
+
+        document.write("数组为" + s + "<br/>")
+        document.write("最大年龄为" + getMaxMinAge(s, max) + "<br/>")
+        document.write("最小年龄为" + getMaxMinAge(s, min))
+    </script>
+</body>
+
+</html>
