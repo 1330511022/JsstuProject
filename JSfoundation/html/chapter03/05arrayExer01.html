@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历二维数组/二维数组比较器</title>
+    <style>
+        .outer {
+            margin: 10px auto;
+            width: 420px;
+            display: flex;
+        }
+
+        .before {
+            width: 200px;
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+        .after {
+            width: 200px;
+            border: 1px solid black;
+            margin-left: 10px;
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid #cccccc;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="outer">
+        <div id="one" class="before">
+        </div>
+        <div id="two" class="after">
+        </div>
+    </div>
+    <script>
+        function display(txt, name) {
+            str = "<table><tr><th colspan=2>" + txt + "</th></tr>";
+            str += "<tr><th>姓名</th><th>成绩</th></tr>";
+            for (var i = 0; i < score.length; i++) {
+                str += "<tr>";
+                for (var j = 0; j < score[i].length; j++) {
+                    str += "<td>" + score[i][j] + "</td>";
+                }
+                str += "</tr>";
+            }
+            str += "</table>";
+            document.getElementById(name).innerHTML = str;
+        }
+        function compareArrays(arr1, arr2) {
+            return arr2[1] - arr1[1];
+        }
+        var score = [['小王', 87], ['小张', 81], ['小李', 97], ['小天', 76],
+        ['小丽', 74], ['小小', 94], ['小西', 90], ['小武', 76],
+        ['小迪', 64], ['小曼', 76]];
+        console.log(score);
+        display("排序前", "one");
+        score.sort(compareArrays);
+        display("排序后", "two");
+    </script>
+
+</body>
+
+
+</html>
