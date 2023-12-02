@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点击这里</button>
+    <button id="cancle">停止循环</button>
+    <script>
+        document.getElementById("btn").onclick = function () {
+            setTimeout(function () {//延时定时器
+                alert("弹出")
+
+            }, 3000);
+        }
+
+        setInterval(function () {//循环定时器
+            alert("循环弹出")
+        }, 1000);
+        document.getElementById("cancle").onclick
+    </script>
+</body>
+
+</html>
