@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**         Window对象
+         alert()        显示带有一段消息和一个确认按钮的警告框。           
+         comfirm()      显示带有一段消息以及确认按钮和取消按钮的对话框     
+         setInterval()  按照指定的周期（以毫秒计）来调用函数或计算表达式。 
+         setTimeout()   在指定的毫秒数后调用函数或计算表达式          
+         window对象是全局对象，window对象的属性和方法在调用时可以省略window.
+        */
+
+        //alert()
+        alert("hello")
+        // window.alert("hello,window")
+
+        //comfirm()
+        var flag = confirm("您确认要删除吗？")
+        console.log(typeof flag);//返回的是布尔值
+
+        //定时器 - setInterval -- 周期性的执行某一个函数
+        var i = 0;
+        setInterval(function () {
+            i++;
+            console.log("定时器执行了" + i + "次");
+        }, 2000);
+
+        //setTimeout(函数或计算表达式，毫秒值)
+        setTimeout(function () {
+            alert("时间结束！")
+        }, 1000
+        )
+
+
+        /*      Location对象
+        href属性 用于获取或者设置浏览器的地址信息
+       */
+        alert(location.href);
+        location.href = "https://www.itcast.cn";
+
+    </script>
+
+
+
+
+</body>
+
+</html>

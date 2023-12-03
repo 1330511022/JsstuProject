@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         *JSON语法格式：
+          key用双引号引起
+          总体用单引号
+         **/
+        var person = '{"name":"张三","age":18,"gender":"男"}';
+        //将json对象化--->1.JSON.parse() 2.JSON.stringify()
+        var jsonObj = JSON.parse(person)
+        alert(jsonObj.name)
+    </script>
+</body>
+
+</html>
