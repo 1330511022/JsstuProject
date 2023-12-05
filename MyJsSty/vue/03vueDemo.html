@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/JS/vue.js"></script>
+</head>
+
+<body>
+    <!-- v-on -->
+    <div id="app">
+        <input type="button" value="按钮" v-on:click="handle()">
+        <!-- 简写v-on ____>v-on -->
+        <input type="button" value="按钮" @click="handle()">
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+
+            },
+            methods: {
+                handle: function () {
+                    alert("点击");
+                }
+            }
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>
