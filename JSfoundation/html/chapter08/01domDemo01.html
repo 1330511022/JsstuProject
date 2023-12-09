@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="info">
+        <a href="http://www.phei.com.cn">电子工业出版社</a><br />
+        <button id="btn">测试DOM节点</button>
+    </div>
+    <script>
+        document.getElementById("btn").onclick = function () {
+            var nodeA = document.getElementsByTagName('a')[0];
+            var nodeT = nodeA.childNodes[0];
+            var nodeAttr = nodeA.attributes[0];
+            console.log(nodeA.nodeName + ' ' + nodeA.nodeType + ' ' +
+                nodeA.nodeValue);
+            console.log(nodeT.nodeName + ' ' + nodeT.nodeType + ' ' +
+                nodeT.nodeValue);
+            console.log(nodeAttr.nodeName + ' ' + nodeAttr.nodeType + ' ' + nodeAttr.nodeValue);
+        } 
+    </script>
+
+
+</body>
+
+</html>

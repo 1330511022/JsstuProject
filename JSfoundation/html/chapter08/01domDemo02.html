@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li id="one">标题一</li>
+            <li id="two">标题二</li>
+            <li id="three">标题三</li>
+        </ul><input type="button" value="按钮1" name="btn1">
+        <input type="button" value="按钮2" name="btn2">
+        <input type="button" value="按钮3" name="btn3">
+    </div>
+    <div class="box"></div>
+</body>
+<script>
+    // 获取整个DOM树
+    console.log(document);
+    // 获取id为one的元素
+    console.log(document.getElementById('one'));
+    // 获取名字为btn1的元素集合
+    console.log(document.getElementsByName('btn1'));
+    // 获取标签为li的元素集合
+    console.log(document.getElementsByTagName('li'));
+    // 获取类名为box的元素集合
+    console.log(document.getElementsByClassName('box'));
+    // 获取标签名为ul的第一个元素
+    var ul = document.getElementsByTagName('ul')[0];
+    // 获取ul的父节点
+    console.log(ul.parentNode);
+    // 获取ul的子节点数组
+    console.log(ul.childNodes);
+    // 获取ul的第一个子节点
+    console.log(ul.firstChild);
+    // 获取ul的最后一个子节点
+    console.log(ul.lastChild);
+    // 获取ul的前一个兄弟节点
+    console.log(ul.previousSibling);
+    // 获取ul的后一个兄弟节点
+    console.log(ul.nextSibling);
+
+</script>
+
+</html>

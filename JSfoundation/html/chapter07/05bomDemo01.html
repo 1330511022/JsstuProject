@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="box">这是一个div</div>
+    <p>这是一个段落</p>
+    <button id="btn">点击显示文档中所有元素对象</button>
+    <p id='content'></p>
+    <script>
+        document.getElementById('btn').onclick = function () {
+            var objs = document.all;
+            var content = '';
+            for (var i = 0; i < objs.length; i++) {
+                content += '第' + (i + 1) + '个对象:' + objs[i].tagName
+                    + '<br/>';
+            }
+            document.getElementById("content").innerHTML = content;
+        } 
+    </script>
+</body>
+
+</html>

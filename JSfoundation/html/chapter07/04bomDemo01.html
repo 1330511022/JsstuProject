@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- screen 对象是 window 对象的属性，中文是“屏幕”的意思。通过 window.screen
+对象的属性可以获取用户屏幕的信息
+属性        描述
+availHeight 返回显示屏幕的高度（除了 Windows 任务栏）
+availWidth 返回显示屏幕的宽度（除了 Windows 任务栏）
+bufferDepth 设置或返回调色板的比特深度
+colorDepth 返回目标设备或缓冲器上的调色板的比特深度
+deviceXDPI 返回显示屏幕的每英寸水平点数
+deviceYDPI 返回显示屏幕的每英寸垂直点数
+fontSmoothingEnabled 返回用户是否在显示控制面板中启用了字体平滑
+logicalXDPI 返回显示屏幕每英寸的水平方向的常规点数
+logicalYDPI 返回显示屏幕每英寸的垂直方向的常规点数
+pixelDepth 返回显示屏幕的颜色分辨率
+width 返回显示器屏幕的宽度
+height 返回显示器屏幕的高度 
+-->
+
+<body>
+    当前屏幕分辨率为：<span id="fbl"></span>
+    <script>
+        var fbl = document.getElementById("fbl");
+        fbl.innerHTML = screen.width + "*" + screen.height; 
+    </script>
+</body>
+
+</html>
