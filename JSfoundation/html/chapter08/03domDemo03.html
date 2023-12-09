@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 15px;
+        }
+
+        .login {
+            border: 2px solid #dddddd;
+            width: 600px;
+            margin: 100px auto;
+            background-color: #dddddd;
+        }
+
+        .title {
+            background-color: #666;
+            height: 50px;
+            line-height: 50px;
+            color: #eef0fe;
+            font-size: 20px;
+            padding-left: 10px;
+        }
+
+        .items {
+            height: 40px;
+            margin-top: 20px;
+        }
+
+        .item1 {
+            float: left;
+            width: 170px;
+            text-align: right;
+            color: #003;
+        }
+
+        .item2 {
+            float: left;
+            width: 420px;
+
+        }
+
+        .txt {
+            width: 300px;
+            height: 25px;
+            background-color: #eef0fe;
+            border: 1px solid #003;
+        }
+
+        .btn {
+            width: 100px;
+            height: 30px;
+            background-color: #eef0fe;
+            color: #3590ac;
+            border: 1px solid #3e92b0;
+        }
+
+        #result {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <div class="title">网站后台管理系统</div>
+        <div class="items">
+            <div class="item1">用户名：</div>
+            <div class="item2"><input class="txt" type="text" name="userName" placeholder="请输入用户名" /></div>
+        </div>
+        <div class="items">
+            <div class="item1">密码：</div>
+            <div class="item2"><input class="txt" type="password" name="password" placeholder="请输入密码" /></div>
+        </div>
+        <div class="items">
+            <div class="item1">&nbsp;</div>
+            <div class="item2">
+                <button class="btn" id="btn">登录</button>
+                <span id="result"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 按钮单击事件
+        document.getElementById("btn").onclick = function () {
+            // 根据类名获取用户名
+            var username = document.getElementsByClassName("txt")[0].value
+            // 根据类名获取密码
+            var pwd = document.getElementsByClassName("txt")[1].value
+            // 如果用户名为空，<span>标签显示红色提示信息“用户名不能为空！”
+            if (username == "") {
+                document.getElementById("result").innerHTML = "用户名不为空！"
+                // 设置焦点位置
+                document.getElementsByClassName("txt")[0].focus();
+                return; // 返回
+            } else if (pwd == "") {
+                // 如果密码为空，<span>标签显示红色提示信息“登录密码不能为空！”
+                document.getElementById("result").innerHTML = "密码不为空！"
+                // 设置焦点位置到密码框
+                document.getElementsByClassName("txt")[1].focus();
+                // 返回
+                return;
+            }
+            // 判断用户名和密码的正确性
+            if (username == "root" && pwd == "123456") {
+                // 如果账户信息正确，<span>标签显示蓝色提示信息“账户信息正确！”
+                // 否则显示红色提示信息“用户名或密码错误！”
+                document.getElementById("result").innerHTML = "账户信息正确！"
+            } else {
+                document.getElementById("result").innerHTML = "用户名或密码错误！"
+            }
+        } 
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="num1" />
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="num2" />
+    <input type="button" id="compute" value="=" />
+    <span id="result"></span>
+
+    <script>
+        document.getElementById("compute").onclick = function () {
+            // 获取输入数和操作符
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var operator = document.getElementById("operator").value;
+            var result;
+            if (isNaN(num1) || isNaN(num2)) {
+                result = "<font color='red'>操作数输入不正确</font>";
+                document.getElementById("result").innerHTML = result;
+                return;
+            } else {
+                num1 = Number(num1);
+                num2 = Number(num2);
+            }
+            // 根据操作符进行判断，并运算
+            switch (operator) {
+                case "+": result = num1 + num2; break;
+                case "-": result = num1 - num2; break;
+                case "*": result = num1 * num2; break;
+                case "/":
+                    if (num2 == 0) {
+                        result = "<font color='red'>除数不能为0</font>"
+                    } else {
+                        result = num1 / num2;
+                    }
+                    break;
+            }
+            // 显示结果
+            document.getElementById("result").innerHTML = result;
+        } 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"> <span id="location">RGB(r,g,b)</span> </div>
+
+    <script> //动态绑定
+        document.getElementsByClassName('box')[0].onmouseover = function () {
+            // r、g、b颜色值：随机生成256以内的16进制整数
+            var r = parseInt(Math.random() * 256).toString(16);
+            var g = parseInt(Math.random() * 256).toString(16);
+            var b = parseInt(Math.random() * 256).toString(16);
+            this.style.backgroundColor = "#" + r + g + b; // 设置<div>的背景颜色 
+            document.getElementById('location').innerHTML = "RGB(" + r + "," + g + "," + b + ")"; // 在<span>标签中显示rgb颜色值
+        }
+
+        //事件监听
+        document.getElementsByTagName("div")[0].addEventListener('click', function () {
+            // r、g、b颜色值：随机生成256以内的16进制整数
+            var r = parseInt(Math.random() * 256).toString(16);
+            var g = parseInt(Math.random() * 256).toString(16);
+            var b = parseInt(Math.random() * 256).toString(16);
+            this.style.backgroundColor = "#" + r + g + b; // 设置<div>的背景颜色 
+            document.getElementById('location').innerHTML = "RGB(" + r + "," + g + "," + b + ")"; // 在<span>标签中显示rgb颜色值
+        }); 
+    </script>
+</body>
+
+</html>

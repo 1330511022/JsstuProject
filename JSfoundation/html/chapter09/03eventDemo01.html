@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            height: 400px;
+            width: 400px;
+            border: 2px solid black;
+            position: relative;
+        }
+
+        .box {
+            background-color: black;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="box"></div>
+    </div>
+
+    <script>
+        var div = document.querySelector(".box"); //获取待移动的DOM元素
+        var outer = document.querySelector(".outer");
+        //存储鼠标按下时距离DOM元素左边和顶部的偏移
+        var offsetX, offsetY;
+        // 为小球绑定鼠标按下事件
+        div.addEventListener("mousedown", down);
+        function down(e) {
+            offsetX = e.clientX - div.offsetLeft; //鼠标按下时距离DOM元素左边的偏移
+            offsetY = e.clientY - div.offsetTop; //鼠标按下时距离DOM元素顶部的偏移
+            // 为outer绑定鼠标移动事件
+            outer.addEventListener("mousemove", move);
+            // 为outer绑定鼠标抬起事件
+            outer.addEventListener("mouseup", up);
+        }
+        function move(e) {
+            // 鼠标移动时调整小球的位置
+            div.style.left = e.clientX - outer.offsetLeft - offsetX + "px";
+            div.style.top = e.clientY - outer.offsetTop - offsetY + "px";
+            // 控制小球在父<div>元素内运动
+            if (div.offsetLeft <= 0) {
+                div.style.left = "0px";
+            }
+            if (div.offsetTop <= 0) {
+                div.style.top = "0px";
+            }
+            if (div.offsetLeft >= outer.offsetWidth - div.offsetWidth) {
+                div.style.left = outer.offsetWidth - div.offsetWidth + "px";
+            }
+            if (div.offsetTop >= outer.offsetHeight - div.offsetHeight) {
+                div.style.top = outer.offsetHeight - div.offsetHeight + "px";
+            }
+        }
+        // 鼠标按键抬起时执行的函数
+        function up() {
+            outer.removeEventListener("mousemove", move);
+            outer.removeEventListener("mouseup", up);
+        }
+
+    </script>
+
+</body>
+
+
+</html>

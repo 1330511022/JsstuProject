@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 600px;
+            width: 800px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <button>加载</button>
+    <div class="box">
+
+    </div>
+
+    <script>
+        window.onload = function () {
+            alert("页面加载完毕执行")
+        }
+        //当窗口发生变化执行
+        window.onresize = function () {
+            if (window.innerHeight > 1000) {
+                document.getElementsByClassName('box')[0].style.backgroundColor = "#fff000"
+            } else if (window.innerWidth > 800 && window.innerHeight < 1000) {
+                document.getElementsByClassName('box')[0].style.backgroundColor = "#00ff00"
+            } else {
+                document.getElementsByClassName('box')[0].style.backgroundColor = "#red"
+            }
+        }
+    </script>
+
+</body>
+
+</html>
