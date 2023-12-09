@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证码验证</title>
+    <style>
+        #verifyCode {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #333;
+            background-color: #eee;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="inputCode" type="text" placeholder="请输入验证码">
+    <span id="verifyCode"></span>
+    <button id="btn">验证</button>
+
+    <script>
+        var str_codes = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+        var codeStr = "";
+        for (var i = 0; i < 4; i++) {
+            var index = Math.floor(Math.random() * str_codes.length);
+            codeStr += str_codes.charAt(index);
+        }
+        document.getElementById("verifyCode").innerHTML = codeStr;
+        document.getElementById("btn").onclick = function () {
+            var userStr = document.getElementById("inputCode").value;
+            userStr = userStr.toUpperCase();
+            code = codeStr.toUpperCase();
+            if (userStr === code) {
+                alert('输入正确');
+            } else {
+                alert('错误！请重新输入');
+            }
+        };
+    </script>
+</body>
+
+</html>

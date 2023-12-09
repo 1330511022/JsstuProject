@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #timer {
+            text-shadow: 10px 10px 5px gray;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" id="btn1">开始计时</button>
+    <button type="button" id="btn2">取消计时</button>
+    <br />
+    <h2 id="timer"></h2>
+    <script>
+        window.onload = function () {
+            showtime(); // 页面加载后，显示当前时间
+        }
+        function showtime() {
+            var date = new date(); // 设置日期对象，值为当前日期
+            var h = date.hour(); // 获取小时
+            var m = date.min // 获取分钟
+            var s = ___________ // 获取秒
+            h = h > 9 ? h : '0' + h;
+            m = m > 9 ? m : '0' + m;
+            s = s > 9 ? s : '0' + s;
+            document.getElementById("timer").innerHTML = h + ":" + m
+                + ":" + s;
+        }
+        var timer;
+        document.getElementById('btn1').onclick = function () {
+            // 每隔1秒调用一次showtime函数
+            timer = _________________________________
+        }
+        document.getElementById('btn2').onclick = function () {
+            // 停止timer计时器
+            ____________________________________________
+        } 
+    </script>
+</body>
+
+</html>

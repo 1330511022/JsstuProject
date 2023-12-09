@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn_close" onclick="close_window()">关闭窗口</button>
+    <button id="btn_open" onclick="open_window()">打开窗口</button>
+
+    <script>
+        function close_window() {
+            var flag = confirm("是否要关闭当前窗口")
+            // console.log(window.closed);//属性
+            if (flag) {
+                close();
+            }
+        }
+        function open_window() {
+            newwindow = window.open("test1", "test2", "width =200", "height = 200");
+            newwindow.document.write("这是子窗口,5秒后关闭")
+            newwindow.setTimeout("close()", 5000);
+        }
+
+    </script>
+</body>
+
+</html>

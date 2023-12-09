@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出租车费用计算</title>
+</head>
+
+<body>
+    <div>
+        <input id="distance" type="text" placeholder="请输入行驶的公里数"><br />
+        <span>是否加价：</span>
+        <input type="radio" name="markup" value="是" checked />是
+        <input type="radio" name="markup" value="否" />否<br />
+        <button onclick="cal()">计算</button><br />
+        <span id="result"></span>
+    </div>
+
+    <script>
+
+        function taxi() {
+            var startPrice = 11;
+            var pricePerKilometer = 2.2;
+            var nightMultiplier = 1.3;
+            function charge(distance, isNight) {
+                var totalFare = 0;
+                if (distance <= 3) {
+                    totalFare = startPrice;
+                } else {
+                    totalFare = startPrice + (distance - 3) * pricePerKilometer;
+                }
+                if (isNight) {
+                    totalFare *= nightMultiplier;
+                }
+                return totalFare.toFixed(1);
+            }
+         return charge;
+        }
+
+
+        function cal() {
+            var distance = parseFloat(document.getElementById("distance").value.trim());
+            var markup = document.getElementsByName("markup");
+            var taxi_func = taxi();
+            var money = taxi_func(distance, markup[0].checked);
+            var result = document.getElementById("result");
+            result.innerHTML = "应付金额：" + money + "元。";
+        }
+    </script>
+</body>
+
+</html>

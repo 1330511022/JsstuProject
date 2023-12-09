@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .highlight {
+            background-color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="search">
+        <input type="text" id="keyword" placeholder="请输入查找的关键字" />
+        <button id="searchBtn">搜索</button>
+        <div class="box">
+            <span id="text">天津职业大学</span>
+        </div>
+    </div>
+    <script>
+        document.getElementById("searchBtn").addEventListener("click", highlightText);
+
+        function highlightText() {
+            const keyword = document.getElementById("keyword").value.trim();
+            const textElement = document.getElementById("text");
+            const text = textElement.innerText;
+            if (keyword) {
+                const regex = new RegExp(keyword, "g");
+                const highlightedText = text.replace(regex, "<span class='highlight'>$&</span>");
+                textElement.innerHTML = highlightedText;
+            } else {
+                textElement.innerHTML = text;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

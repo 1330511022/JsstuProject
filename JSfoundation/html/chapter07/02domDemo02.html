@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span id="seconds">5</span>
+    <a href="http://www.phei.com.cn">
+        秒钟之后系统将自动跳转，也可以单击此链接跳转
+    </a>
+    <script>
+        var sec_str = document.getElementById("seconds").innerHTML;
+        // 将秒数转换为整型值
+        var sec_value = parseInt(sec_str);
+        // 声明计时器变量
+        var timer;
+        window.onload = function () {
+            // 每隔1秒执行一次countSec函数
+            timer = setInterval(countSec, 1000)
+        }
+        // 倒计时为0时，页面跳转
+        function countSec() {
+            // 当前秒数减1 
+            sec_value--;
+            document.getElementById("seconds").innerHTML = sec_value;
+            // 如果秒数为0，则停止计时器，并进行跳转。请补充代码
+            if (sec_value == 0) {
+                window.location.href = "http://www.phei.com.cn"
+            }
+        } 
+    </script>
+</body>
+
+</html>

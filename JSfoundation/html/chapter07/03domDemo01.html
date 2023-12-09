@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1">后退 &lt;&lt; </button>
+    <button id="btn2">前进 &gt;&gt; </button>
+    <button id="btn3">刷新</button>
+    <script>
+        // 后退
+        document.getElementById('btn1').onclick = function () {
+            history.back();
+        }
+        // 前进
+        document.getElementById('btn2').onclick = function () {
+            history.forward();
+        }
+        // 刷新当前页面
+        document.getElementById('btn3').onclick = function () {
+            history.go(0);
+        }
+    </script>
+</body>
+
+</html>
