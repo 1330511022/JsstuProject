@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="middle">
+            <div id="inner"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('outer').addEventListener('click',
+            function () {
+                console.log('最外层div被单击');
+            });
+        document.getElementById('middle').addEventListener('click',
+            function (ev) {
+                console.log('中间层div被单击');
+                ev.stopPropagation();
+            })
+        document.getElementById('inner').addEventListener('click',
+            function (ev) {
+                console.log('最内层div被单击');
+                ev.stopPropagation();
+            }) 
+    </script>
+</body>
+
+</html>

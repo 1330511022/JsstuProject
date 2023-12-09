@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <table cellspacing="3px">
+            <tr>
+                <td>Javscript</td>
+                <td><button>删除</button></td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td><button>删除</button></td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td><button>删除</button></td>
+            </tr>
+            <tr>
+                <td>jQuery</td>
+                <td><button>删除</button></td>
+            </tr>
+        </table>
+        <input type="button" value="添加" name="btn1">
+    </div>
+
+
+    <script src='/JS/jquery-3.7.1.js'></script>
+    <script>
+        //获取表格中的删除按钮(原生DOM) 
+        var addbtn = $('input')[0];
+        //“添加”按钮的单击事件
+        addbtn.addEventListener("click", function () {
+            var tr = $("<tr>"); // 创建<tr>节点
+            var td1 = $("<td>Test</td>"); // 创建第一个<td>节点
+            var td2 = $("<td>"); // 创建第二个<td>节点
+            var tdbtn = $("<button>删除测试</button>"); //创建按钮节点
+            td2.append(tdbtn); //将按钮添加到<td>中
+            tr.append(td1).append(td2); //将两个<td>添加到<tr>中
+            $("tbody").append(tr); //将<tr>添加到表格中
+            // 为“删除”按钮注册单击事件
+            $("button").click(function () {
+                // 删除按钮所在的行
+                $(this).parent().parent().remove();
+            })
+        }); 
+    </script>
+
+</body>
+
+</html>

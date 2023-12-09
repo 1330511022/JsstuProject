@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="email" value="" placeholder="请输入电子
+邮箱" />
+    <input type="button" id="btn" value="提交" /><br /><br />
+    <span id="result"/>
+    <script src="/JS/jquery-3.7.1.js"></script>
+    <script>
+        $('#btn').click(function () {
+            var $inStr = $('#email').val();
+            $('#result').html("<font size='5'>电子邮箱：<font color  = 'red' > " + $inStr + "</font ></font > ");
+        }); 
+    </script>
+</body>
+
+</body>
+
+</html>

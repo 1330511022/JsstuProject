@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            display: inline;
+            margin-right: 15px;
+            padding: 15px;
+        }
+
+        #menu {
+            width: 800px;
+            height: 60px;
+            margin: 0px auto;
+            border: 1px solid #5f5f5f;
+        }
+
+        table {
+            width: 800px;
+            height: 60px;
+            margin: 0px auto;
+            background-color: rgb(248, 249, 250);
+            color: rgb(34, 634, 17734);
+            border: 1px solid rgb(162, 169, 177);
+            border-collapse: collapse;
+            font-family: sans-serif;
+        }
+
+        th,
+        td {
+            border: 1px solid rgb(162, 169, 177);
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="menu"></div>
+    <table>
+        <tr>
+            <td>版本号</td>
+            <td>发布日期</td>
+            <td>最新更新</td>
+            <td>大小</td>
+            <td>备注</td>
+        </tr>
+    </table>
+    <script src="/JS/jquery-3.7.1.js"></script>
+    <script type="text/javascript">
+        var navlist = ['首页', '学校简介', '院系设置', '招生就业', '校园文化', '信息公开', '联系我们'];
+        var str = "<ul>";
+        for (var index in navlist) {
+            if (index == 0) {
+                str += "<li class='current'>" + navlist[index] + "</li>";
+            } else {
+                str += "<li class='other'>" + navlist[index] + "</li>";
+            }
+        }
+        str = str + "</ul>";
+        $("#menu").html(str);
+        $("li.current").css("backgroundColor", "blue").css("color", "white");
+        $("li.other").css("backgroundColor", "#CCC").css("color", "#333");
+
+        var datalist = [
+            {
+                version: "1",
+                pubdate: "2012-06-03",
+                latest: "v3.1.21",
+                md: "25kb",
+                write: "无"
+            },
+            {
+                version: "2",
+                pubdate: "2012-06-03",
+                latest: "v3.1.21",
+                md: "25kb",
+                write: "无"
+            },
+            {
+                version: "3",
+                pubdate: "2012-06-03",
+                latest: "v3.1.21",
+                md: "25kb",
+                write: "无"
+            },
+            {
+                version: "4",
+                pubdate: "2012-06-03",
+                latest: "v3.1.21",
+                md: "25kb",
+                write: "无"
+            },
+            {
+                version: "5",
+                pubdate: "2012-06-03",
+                latest: "v3.1.21",
+                md: "25kb",
+                write: "无"
+            },
+            {
+                version: "6",
+                pubdate: "2012-06-03",
+                latest: "v3.1.21",
+                md: "25kb",
+                write: "无"
+            },
+            {
+                version: "7",
+                pubdate: "2012-06-03",
+                latest: "v3.1.21",
+                md: "25kb",
+                write: "无"
+            },
+            {
+                version: "8",
+                pubdate: "2012-06-03",
+                latest: "v3.1.21",
+                md: "25kb",
+                write: "无"
+            },
+            {
+                version: "9",
+                pubdate: "2012-06-03",
+                latest: "v3.1.21",
+                md: "25kb",
+                write: "无"
+            },
+            {
+                version: "10",
+                pubdate: "2012-06-03",
+                latest: "v3.1.21",
+                md: "25kb",
+                write: "无"
+            }
+            , {
+                version: "11",
+                pubdate: "2012-06-03",
+                latest: "v3.1.21",
+                md: "25kb",
+                write: "无"
+            }
+
+        ];
+        var strdata = "";
+        for (var index in datalist) {
+            strdata += "<tr>";
+            strdata += "<td>" + datalist[index].version + "</td>";
+            strdata += "<td>" + datalist[index].pubdate + "</td>";
+            strdata += "<td>" + datalist[index].latest + "</td>";
+            strdata += "<td>" + datalist[index].md + "</td>";
+            strdata += "<td>" + datalist[index].write + "</td>";
+            strdata += "</tr>";
+        }
+        $("table").append(strdata);
+
+    </script>
+</body>
+
+</html>
